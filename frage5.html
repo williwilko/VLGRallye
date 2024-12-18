@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frage 5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px;
+        }
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #003d80;
+        }
+        .message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1em;
+            display: none;
+        }
+        .success {
+            background-color: #e6ffe6;
+            border: 1px solid #66cc66;
+            color: #004d00;
+        }
+        .error {
+            background-color: #ffe6e6;
+            border: 1px solid #ff9999;
+            color: #660000;
+        }
+		
+		footer a {
+            color: white;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .github-icon {
+            display: inline-block;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        .github-icon img {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+    <script>
+        function checkAnswer() {
+            const input = document.querySelector('input[type="text"]').value.trim();
+            const message = document.querySelector('.message');
+            const validAnswers = ["h2o", "H2O", "h2O", "H2o"];
+            if (validAnswers.includes(input)) {
+                message.textContent = "Das ist richtig!";
+                message.className = "message success";
+            } else {
+                message.textContent = "Die Formel für Wasser ist H2O.";
+                message.className = "message error";
+            }
+            message.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Frage 5</h1>
+    </header>
+    <div class="container">
+        <h2>Was ist die Formel für Wasser?</h2>
+        <input type="text" placeholder="Antwort eingeben">
+        <button onclick="checkAnswer()">Bestätigen</button>
+        <div class="message"></div>
+        <button onclick="window.location.href='frage6.html'" style="margin-top: 20px;">Weiter</button>
+    </div>
+</body>
+<footer>
+        <span>Source Code auf GitHub:</span>
+        <a href="https://github.com/williwilko/VLGRallye" target="_blank" class="github-icon">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+        </a>
+</footer>
+</html>

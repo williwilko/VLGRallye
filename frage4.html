@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frage 4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px;
+        }
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .answer {
+            display: block;
+            margin: 10px auto;
+            padding: 15px 30px;
+            font-size: 1em;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 300px;
+        }
+        .answer.correct {
+            background-color: green;
+        }
+        .answer.wrong {
+            background-color: red;
+        }
+        .answer:hover {
+            background-color: #0056b3;
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #003d80;
+        }
+		
+		footer a {
+            color: white;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .github-icon {
+            display: inline-block;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        .github-icon img {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+    <script>
+        function checkAnswer(selectedButton, correctAnswer) {
+            const buttons = document.querySelectorAll('.answer');
+            buttons.forEach(button => {
+                if (button.textContent === correctAnswer) {
+                    button.classList.add('correct');
+                } else {
+                    button.classList.add('wrong');
+                }
+                button.disabled = true; // Deaktiviert alle Buttons nach Auswahl
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Frage 4</h1>
+    </header>
+    <div class="container">
+        <h2>Wie heißen die Hausmeister?</h2>
+        <button class="answer" onclick="checkAnswer(this, 'Lars Grösche, Alexander Neimann')">Lars Grösche, Alexander Neimann</button>
+        <button class="answer" onclick="checkAnswer(this, 'Lars Grösche, Alexander Neimann')">Spider-Man, Batman</button>
+        <button class="answer" onclick="checkAnswer(this, 'Lars Grösche, Alexander Neimann')">Olaf Scholz, Angela Merkel</button>
+        <button onclick="window.location.href='frage5.html'">Weiter</button>
+    </div>
+</body>
+<footer>
+        <span>Source Code auf GitHub:</span>
+        <a href="https://github.com/williwilko/VLGRallye" target="_blank" class="github-icon">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+        </a>
+</footer>
+</html>
